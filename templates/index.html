@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup-Acquisition-Status-Prediction</title>
+</head>
+
+<body>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <br><br>
+    <div class="mt-10 sm:mt-0">
+        <div class="md:grid md:grid-cols-3 md:gap-6">
+            <div class="md:col-span-1">
+                <div class="px-4 sm:px-0">
+                    <!-- <h3 style="text-align:center; font-size:40px; color:blue; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Startup-Acquisition-Status-Prediction</h3>
+                    <img src="{{url_for('static', filename='forms1.svg')}}" width="100%"> -->
+                </div>
+            </div>
+            <div class="mt-5 md:mt-0 md:col-span-2">
+                <form action="/predict" method="POST">
+                    <div class="shadow overflow-hidden sm:rounded-md">
+                        <div class="px-4 py-5 bg-gray-200 sm:p-9">
+                            <div class="grid grid-cols-6 gap-6">
+
+                                
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="founded_at" class="block text-sm font-medium text-black-700">founded at:</label>
+                                    <input type="text" name="founded_at" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="first_funding_at" class="block text-sm font-medium text-black-700">first funding at:</label>
+                                    <input type="text" name="first_funding_at" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="last_funding_at" class="block text-sm font-medium text-black-700">last funding at:</label>
+                                    <input type="text" name="last_funding_at" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="funding_rounds" class="block text-sm font-medium text-black-700">Funding rounds:  <small>values up to 3 rounds</small></label>
+                                    <input type="text" name="funding_rounds" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="funding_total_usd" class="block text-sm font-medium text-black-700">Funding total usd:</label>
+                                    <input type="text" name="funding_total_usd" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="first_milestone_at" class="block text-sm font-medium text-black-700">first milestone at</label>
+                                    <input type="text" name="first_milestone_at" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="last_milestone_at" class="block text-sm font-medium text-black-700">last milestone at</label>
+                                    <input type="text" name="last_milestone_at" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+
+
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="milestones" class="block text-sm font-medium text-black-700">Milestones</label>
+                                    <input type="text" name="milestones" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="relationships" class="block text-sm font-medium text-black-700">Relationship:</label>
+                                    <input type="text" name="relationships" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="lat" class="block text-sm font-medium text-black-700">Latitude:</label>
+                                    <input type="text" name="lat" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="lng" class="block text-sm font-medium text-black-700">Longitude:</label>
+                                    <input type="text" name="lng" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="Active_Days" class="block text-sm font-medium text-black-700">Active Days:</label>
+                                    <input type="text" name="Active_Days" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full h-10 shadow border-black-300 rounded-md">
+                                </div>
+<!-- 
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="category-code" class="block text-sm font-medium text-gray-700">Code Category</label>
+                                    <select id="country" name="category-code" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <option>web</option>
+                            <option>games video</option>
+                            <option>network hosting</option>
+                            <option>advertising</option>
+                            <option>enterprise</option>
+                            <option>consulting</option>
+                            <option>mobile</option>
+                            <option>health</option>
+                            <option>software</option>
+
+
+                            <option>biotech</option>
+                            <option>ecommerce</option>
+                            <option>public relatiions</option>
+                            <option>hardware</option>
+                            <option>search</option>
+                            <option>other</option>
+                            </select>
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="country" class="block text-sm font-medium text-gray-700">Country Code</label>
+                                    <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option data-countryCode="web" value="US">web </option>
+                        <option data-countryCode="games video" value="GBR" Selected>UK </option>
+                        <option data-countryCode="IND" value="IND">India </option>
+                        <option data-countryCode="CAN" value="CAN">Canada </option>
+                        <option data-countryCode="DEU" value="DEU">Germany </option>
+                        <option data-countryCode="FRA" value="FRA">France</option>
+                        <option data-countryCode="AUS" value="AUS">Australia</option>
+                        <option data-countryCode="ESP" value="ESP">Spain</option>
+                        <option data-countryCode="IRL" value="IRL">Ireland</option>
+                        <option data-countryCode="other" value="other">Others</option>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label for="country" class="block text-sm font-medium text-gray-700">Country Code</label>
+                                    <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option data-countryCode="US" value="US">USA </option>
+                        <option data-countryCode="GBR" value="GBR" Selected>UK </option>
+                        <option data-countryCode="IND" value="IND">India </option>
+                        <option data-countryCode="CAN" value="CAN">Canada </option>
+                        <option data-countryCode="DEU" value="DEU">Germany </option>
+                        <option data-countryCode="FRA" value="FRA">France</option>
+                        <option data-countryCode="AUS" value="AUS">Australia</option>
+                        <option data-countryCode="ESP" value="ESP">Spain</option>
+                        <option data-countryCode="IRL" value="IRL">Ireland</option>
+                        <option data-countryCode="other" value="other">Others</option>
+                    </select>
+                                </div>
+
+
+                            </div>
+                        </div> -->
+                        <div class="px-4 py-3 bg-gray-200 text-right sm:px-6">
+                            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div >
+                    <h3>{{ prediction_test }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
